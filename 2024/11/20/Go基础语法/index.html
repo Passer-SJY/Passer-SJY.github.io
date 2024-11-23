@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head prefix="og: https://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  
+  <title>Go基础语法 - HaPaTa&#39;s Blog</title>
+  
+    <link rel="shortcut icon" href="https://www.helloimg.com/i/2024/11/23/6741b49743a1c.png">
+  
+  
+    <link rel='manifest' href='/manifest.json'>
+  
+
+  
+  
+  
+  <meta property="og:title" content="Go基础语法 - HaPaTa&#39;s Blog" />
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:url" content="http://example.com/2024/11/20/Go%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.html" />
+  
+  <meta property="og:image" content="https://www.helloimg.com/i/2024/11/23/6741b49743a1c.png" />
+  
+  <meta property="og:article:published_time" content="2024-11-20T14:16:57.031Z" />
+  
+  <meta property="og:article:author" content="HaPaTa" />
+  
+  
+
+  
+<link rel="stylesheet" href="/css/var.css">
+
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/typography.css">
+
+  
+<link rel="stylesheet" href="/css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="/css/components.css">
+
+  
+<link rel="stylesheet" href="/css/nav.css">
+
+  
+<link rel="stylesheet" href="/css/paginator.css">
+
+  
+<link rel="stylesheet" href="/css/footer.css">
+
+  
+<link rel="stylesheet" href="/css/post-list.css">
+
+  
+  
+<link rel="stylesheet" href="/css/rainbow-banner.css">
+
+  
+  
+  
+<link rel="stylesheet" href="/css/toc.css">
+
+  
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/post.css">
+
+  
+  
+  
+  
+  
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+    <body
+        data-color-scheme="auto"
+        data-uppercase-categories="true"
+        
+        data-rainbow-banner="true"
+        data-rainbow-banner-shown="always"
+        data-rainbow-banner-month="6"
+        data-rainbow-banner-colors="#e50000,#ff8d00,#ffee00,#008121,#004cff,#760188"
+        
+        data-config-root="/"
+        
+        data-toc="true"
+        data-toc-max-depth="2"
+        
+        
+    >
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">HaPaTa&#39;s Blog</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">主页</a>
+            
+            
+            <a class="nav-item" href="/archives">文章</a>
+            
+            
+            
+            <a class="nav-item" href="/categories">分类</a>
+            
+            
+            
+            <a class="nav-item" href="/friends">友链</a>
+            
+            
+            
+            <a class="nav-item" href="/projects">项目</a>
+            
+            
+            
+            <a class="nav-item" href="/about">关于</a>
+            
+            
+            
+            <a class="nav-item nav-item-github nav-item-icon" href="https://github.com/Passer-SJY" target="_blank" aria-label="GitHub">&nbsp;</a>
+            
+            
+            
+            <a class="nav-item nav-item-search nav-item-icon" href="/search" target="_blank" aria-label="Search">&nbsp;</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        
+<article class="post">
+    <div class="meta">
+        
+        <div class="categories text-uppercase">
+        
+            <a href="/categories/Go/">Go</a>
+        
+        </div>
+        
+
+        
+        <div class="date" id="date">
+            <span>November</span>
+            <span>20,</span>
+            <span>2024</span>
+        </div>
+        
+
+        <h1 class="title">Go基础语法</h1>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <h2 id="Go标记"><a href="#Go标记" class="headerlink" title="Go标记"></a>Go标记</h2><ul>
+<li>Go程序可以由多个标记组成，可以是关键字、标识符、常量、字符串、符号<br>如<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fmt.Println(<span class="string">&quot;Hello World!&quot;</span>)</span><br></pre></td></tr></table></figure>
+就由以下6个标记组成（每行为1个）<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fmt</span><br><span class="line">.</span><br><span class="line">Println</span><br><span class="line">(</span><br><span class="line"><span class="string">&quot;Hello World!&quot;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="行分隔符"><a href="#行分隔符" class="headerlink" title="行分隔符"></a>行分隔符</h2><p>在Go语言中，并不需要像C语言一样的;分隔符，只要回车换行，Go编译器就会自动识别自动解决</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fmt.Println(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line">fmt.Print(<span class="string">&quot;Hello World!\n&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>当然了，你要是这么写</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fmt.Println(<span class="string">&quot;Hello World!&quot;</span>);fmt.Print(<span class="string">&quot;Hello World!\n&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>也没人拦你</p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>注释懂得都懂</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是单行注释的写法</span></span><br><span class="line"><span class="comment">/*这是多行注释的写法</span></span><br><span class="line"><span class="comment">一直写，怎么写</span></span><br><span class="line"><span class="comment">都有面*/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>标识符用来命名变量</p>
+<table>
+<thead>
+<tr>
+<th>mahesh</th>
+<th>kumar</th>
+<th>abc</th>
+<th>move_name</th>
+<th>a_123</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>myname</td>
+<td><code>_</code>temp</td>
+<td>j</td>
+<td>a23b9</td>
+<td>retVal</td>
+</tr>
+<tr>
+<td>这些都是正确的标识符</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>下面再举几个无效标识符的例子</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<ul>
+<li>1ab（以数字开头的不行）</li>
+<li>case（Go语言的关键字也不行）</li>
+<li>a+b（运算符一样不行）</li>
+</ul>
+<h2 id="字符串连接"><a href="#字符串连接" class="headerlink" title="字符串连接"></a>字符串连接</h2><p>Go语言的字符串可以通过<code>+</code>来连接</p>
+<p>例：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;Sun&quot;</span>+<span class="string">&quot;JianYu&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出的结果就为<code>SunJianYu</code> </p>
+<h2 id="格式化字符串"><a href="#格式化字符串" class="headerlink" title="格式化字符串"></a>格式化字符串</h2><h2 id="语言变量"><a href="#语言变量" class="headerlink" title="语言变量"></a>语言变量</h2>
+    </div>
+
+    
+    <div class="about">
+        <h1>关于本文</h1>
+        <div class="details">
+            <p>由 HaPaTa 撰写, 感谢支持.</p>
+        </div>
+        
+        <p class="tags">
+            
+            <i class="icon"></i>
+            <a href="/tags/Go/" class="tag">#Go</a><a href="/tags/后端/" class="tag">#后端</a>
+        </p>
+        
+    </div>
+    
+
+    <div class="container post-prev-next">
+        <a class="next"></a>
+        
+        <a href="/2024/11/20/%E5%88%9D%E5%A7%8BGo/" class="prev">
+            <div>
+                <div class="text">
+                    <p class="label">上一篇</p>
+                    <h3 class="title">初识Go</>
+                </div>
+            </div>
+        </a>
+        
+    </div>
+
+    
+        
+        
+    
+</article>
+
+        <footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h2 class="title">Blog</h2>
+                
+                <a href="/" class="item">Blog</a>
+                
+                <a href="/archives" class="item">文章</a>
+                
+                <a href="/tags" class="item">标签</a>
+                
+                <a href="/categories" class="item">分类</a>
+                
+                <a href="/search" class="item">搜索</a>
+                
+                <a href="/friends" class="item">友链</a>
+                
+                <a href="/projects" class="item">项目</a>
+                
+                <a href="/about" class="item">关于</a>
+                
+                <a href="/atom.xml" class="item">RSS</a>
+                
+            </div>
+            
+            <div class="group">
+                <h2 class="title">Projects</h2>
+                
+            </div>
+            
+            <div class="group">
+                <h2 class="title">Me</h2>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/Passer-SJY" class="item">GitHub</a>
+                
+                <a href="mailto:sunjianyu9797@yeah.net" class="item">Email</a>
+                
+            </div>
+            
+        </div>
+        <span>&copy; 2024 HaPaTa<br>由 <a href="http://hexo.io/" target="_blank">Hexo</a> 驱动 </span>
+        
+        
+            <br>
+            <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
+                <label>
+                    <input type="radio" value="light">
+                    <span>Light</span>
+                </label>
+                <label>
+                    <input type="radio" value="dark">
+                    <span>Dark</span>
+                </label>
+                <label>
+                    <input type="radio" value="auto">
+                    <span>Auto</span>
+                </label>
+            </div>
+        
+    </div>
+</footer>
+
+
+        
+<script src="/js/main.js"></script>
+
+        
+        
+        
+
+        
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            window.addEventListener('load', () => {
+                ScrollReveal({ delay: 250, reset: true, easing: 'cubic-bezier(0, 0, 0, 1)' })
+                ScrollReveal().reveal('.post-list-item .cover-img img')
+                ScrollReveal().reveal('.post-list-item, .card, .content p img, .content .block-large img', { distance: '60px', origin: 'bottom', duration: 800 })
+            })
+        </script>
+        
+    </body>
+</html>
